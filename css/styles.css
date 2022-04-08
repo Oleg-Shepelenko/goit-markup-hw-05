@@ -17,6 +17,8 @@ font-family: 'Roboto', sans-serif; */
 
   --primary-icon-color: #afb1b8;
   --overlay-icon-color: rgba(255, 255, 255, 0.1);
+
+  --animation-hover: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 img {
@@ -65,10 +67,17 @@ body {
   background: #ffffff;
   border-bottom: 1px solid #ececec;
 }
+
 .site {
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -113,14 +122,29 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: var(--animation-hover);
+}
+
+.site-nav .link {
+  position: relative;
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
 }
-.site-nav .link.current {
-  color: var(--accent-color);
+
+.current:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .contacts-header {
@@ -134,6 +158,10 @@ body {
   align-items: center;
 }
 
+.contacts-header .item {
+  display: flex;
+}
+
 .icon-header {
   margin-right: 10px;
   background-repeat: no-repeat;
@@ -141,6 +169,7 @@ body {
   background-size: contain;
   fill: var(--primary-text-color);
   cursor: pointer;
+  transition: var(--animation-hover);
 }
 
 .item:hover .icon-header,
@@ -153,13 +182,20 @@ body {
 }
 
 .contacts-header .item + .item {
-  margin-left: 50px;
+  margin-left: 30px;
 }
+.contacts-header .item {
+  display: block;
+}
+
 .contacts-header .link {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--primary-text-color);
+  transition: var(--animation-hover);
 }
 
 .contacts-header .link:hover,
@@ -214,6 +250,7 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+  transition: var(--animation-hover);
 }
 
 .hero-button:hover,
@@ -286,6 +323,31 @@ body {
   margin-left: 30px;
 }
 
+.activity-thumb {
+  position: relative;
+}
+.activity-descr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hidden-text-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
 /* team */
 
 .team {
@@ -353,6 +415,7 @@ body {
 
 .team-item {
   border-radius: 50%;
+  transition: var(--animation-hover);
 }
 
 .team-link {
@@ -362,6 +425,7 @@ body {
   width: 44px;
   height: 44px;
   fill: var(--primary-icon-color);
+  transition: var(--animation-hover);
 }
 
 .team-item:hover,
@@ -400,14 +464,15 @@ body {
   border-radius: 4px;
   width: 170px;
   height: 92px;
+  transition: var(--animation-hover);
 }
 
 .customers-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
-  height: 92px;
+  width: 100%;
+  height: 100%;
   fill: var(--primary-icon-color);
 }
 
@@ -449,6 +514,7 @@ body {
   letter-spacing: 0.03em;
   color: var(--overlay-text-color);
   font-style: normal;
+  transition: var(--animation-hover);
 }
 .contacts-footer .link:hover,
 .contacts-footer .link:focus {
@@ -494,6 +560,7 @@ body {
 .socials-item {
   border-radius: 50%;
   background: var(--overlay-icon-color);
+  transition: var(--animation-hover);
 }
 
 .socials-link {
@@ -534,6 +601,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   cursor: pointer;
+  transition: var(--animation-hover);
 }
 
 .gallery-button:focus,
@@ -543,10 +611,7 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.gallery-button.here {
-  background-color: var(--accent-color);
-  color: var(--hidden-text-color);
-}
+
 .portfoli-list {
   margin-top: 50px;
   display: flex;
@@ -561,6 +626,7 @@ body {
 
 .portfoli-link {
   display: block;
+  transition: var(--animation-hover);
 }
 
 .portfoli-link:hover,
