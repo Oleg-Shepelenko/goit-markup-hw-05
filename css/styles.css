@@ -110,6 +110,7 @@ body {
   height: 100%;
   margin-left: 93px;
 }
+
 .site-nav .item + .item {
   margin-left: 50px;
 }
@@ -304,8 +305,6 @@ body {
 .activity {
   padding-bottom: 94px;
 }
-
-
 
 .activity-title {
   margin-bottom: 50px;
@@ -628,13 +627,50 @@ body {
 
 .portfoli-link {
   display: block;
+  position: relative;
   transition: var(--animation-hover);
 }
-
 .portfoli-link:hover,
 .portfoli-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfoli-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfoli-descr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  padding: 24px;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--hidden-text-color);
+  background: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: var(--animation-hover);
+}
+
+.portfoli-link:hover .portfoli-descr,
+.portfoli-link:focus .portfoli-descr {
+  transform: translateY(0);
 }
 
 .portfoli-items:nth-child(3n) {
