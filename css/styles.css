@@ -124,7 +124,7 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition: var(--animation-hover);
+  transition: color var(--animation-hover);
 }
 
 .site-nav .link {
@@ -170,7 +170,7 @@ body {
   background-size: contain;
   fill: var(--primary-text-color);
   cursor: pointer;
-  transition: var(--animation-hover);
+  transition: fill var(--animation-hover);
 }
 
 .item:hover .icon-header,
@@ -196,7 +196,7 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--primary-text-color);
-  transition: var(--animation-hover);
+  transition: color var(--animation-hover);
 }
 
 .contacts-header .link:hover,
@@ -251,13 +251,14 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
-  transition: var(--animation-hover);
+  transition: background-color var(--animation-hover);
 }
 
 .hero-button:hover,
 .hero-button:focus {
   background-color: var(--accent-active-color);
 }
+
 /* feature */
 .feature-list {
   display: flex;
@@ -416,7 +417,7 @@ body {
 
 .team-item {
   border-radius: 50%;
-  transition: var(--animation-hover);
+  transition: background-color var(--animation-hover);
 }
 
 .team-link {
@@ -426,7 +427,7 @@ body {
   width: 44px;
   height: 44px;
   fill: var(--primary-icon-color);
-  transition: var(--animation-hover);
+  transition: fill var(--animation-hover);
 }
 
 .team-item:hover,
@@ -465,7 +466,7 @@ body {
   border-radius: 4px;
   width: 170px;
   height: 92px;
-  transition: var(--animation-hover);
+  transition: fill var(--animation-hover), border var(--animation-hover) ;
 }
 
 .customers-link {
@@ -515,7 +516,7 @@ body {
   letter-spacing: 0.03em;
   color: var(--overlay-text-color);
   font-style: normal;
-  transition: var(--animation-hover);
+  transition: color var(--animation-hover);
 }
 .contacts-footer .link:hover,
 .contacts-footer .link:focus {
@@ -561,7 +562,7 @@ body {
 .socials-item {
   border-radius: 50%;
   background: var(--overlay-icon-color);
-  transition: var(--animation-hover);
+  transition: background-color var(--animation-hover);
 }
 
 .socials-link {
@@ -577,6 +578,69 @@ body {
 .socials-item:focus {
   background-color: var(--accent-color);
 }
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+
+  transition: opacity var(--animation-hover), visibility var(--animation-hover) ;
+
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 530px;
+  height: 580px;
+
+  transform: translate(-50%, -50%);
+  background: var(--hidden-text-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+
+
+.modal-btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background-color: white;
+  
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #fff;
+}
+
+
 
 /* gallery */
 
@@ -602,7 +666,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   cursor: pointer;
-  transition: var(--animation-hover);
+  transition: color var(--animation-hover), background-color var(--animation-hover) , box-shadow var(--animation-hover);
 }
 
 .gallery-button:focus,
@@ -628,7 +692,7 @@ body {
 .portfoli-link {
   display: block;
   position: relative;
-  transition: var(--animation-hover);
+  transition: box-shadow var(--animation-hover);
 }
 .portfoli-link:hover,
 .portfoli-link:focus {
@@ -665,7 +729,7 @@ body {
   background: rgba(33, 150, 243, 0.9);
 
   transform: translateY(100%);
-  transition: var(--animation-hover);
+  transition: transform var(--animation-hover);
 }
 
 .portfoli-link:hover .portfoli-descr,
