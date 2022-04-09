@@ -629,17 +629,11 @@ body {
   top: 8px;
   right: 8px;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--hidden-text-color);
   
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
-
-.modal-btn:hover,
-.modal-btn:focus {
-  background-color: #fff;
-}
-
 
 
 /* gallery */
