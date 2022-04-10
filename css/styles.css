@@ -136,6 +136,11 @@ body {
   color: var(--accent-color);
 }
 
+
+.site-nav .link.current {
+  color: var(--accent-color);
+}
+
 .current:after {
   position: absolute;
   content: '';
@@ -147,6 +152,9 @@ body {
   background: var(--accent-color);
   border-radius: 2px;
 }
+
+
+
 
 .contacts-header {
   display: flex;
