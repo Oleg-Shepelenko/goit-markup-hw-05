@@ -136,7 +136,6 @@ body {
   color: var(--accent-color);
 }
 
-
 .site-nav .link.current {
   color: var(--accent-color);
 }
@@ -152,9 +151,6 @@ body {
   background: var(--accent-color);
   border-radius: 2px;
 }
-
-
-
 
 .contacts-header {
   display: flex;
@@ -474,7 +470,7 @@ body {
   border-radius: 4px;
   width: 170px;
   height: 92px;
-  transition: fill var(--animation-hover), border var(--animation-hover) ;
+  transition: border var(--animation-hover);
 }
 
 .customers-link {
@@ -484,6 +480,7 @@ body {
   width: 100%;
   height: 100%;
   fill: var(--primary-icon-color);
+  transition: fill var(--animation-hover);
 }
 
 .customers-items:hover .customers-link,
@@ -601,8 +598,7 @@ body {
   visibility: visible;
   pointer-events: initial;
 
-  transition: opacity var(--animation-hover), visibility var(--animation-hover) ;
-
+  transition: opacity var(--animation-hover), visibility var(--animation-hover);
 }
 
 .is-hidden {
@@ -626,8 +622,6 @@ body {
   border-radius: 4px;
 }
 
-
-
 .modal-btn {
   display: flex;
   align-items: center;
@@ -638,12 +632,11 @@ body {
   right: 8px;
   border-radius: 50%;
   background-color: var(--hidden-text-color);
-  
+
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   cursor: pointer;
 }
-
 
 /* gallery */
 
@@ -669,7 +662,8 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   cursor: pointer;
-  transition: color var(--animation-hover), background-color var(--animation-hover) , box-shadow var(--animation-hover);
+  transition: color var(--animation-hover), background-color var(--animation-hover),
+    box-shadow var(--animation-hover);
 }
 
 .gallery-button:focus,
